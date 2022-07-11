@@ -1,19 +1,25 @@
 
-import java.util.Arrays;
-import java.util.List;
-
+import java.util.*;
+  
 public class LambdaSeven {
-    public static void main(String[] args) {
-        List<Order> order = Arrays.asList(
-                new Order(600,"ACCEPTED"),
-                new Order(700,"COMPLETED"),
-                new Order(300,"ACCEPTED"),
-                new Order(15000,"ACCEPTED"),
-                new Order(12000,"REJECTED"),
-               new Order(12000,"REJECTED"),
-              new Order(12000,"INVALID"));
-        order.stream().filter(o -> o.getPrice() > 10_000).forEach(System.out::println);
-        order.stream().filter(o ->(o.getStatus().equals("ACCEPTED")) || o.getStatus().equals("COMPLETED")).forEach(System.out::println);
-
+    public static void main(String[] args)
+    {
+       
+        Map<Integer, String> map = new HashMap<Integer, String>();
+  
+       
+        map.put(12, "Soumya");
+        map.put(19, "Nidhi");
+        map.put(22, "Krishna");
+     
+       
+        System.out.println("The initial mappings are: " + map);
+  
+     
+        System.out.println("The set is: " + map.entrySet());
+        
+        
+        StringBuilder str= new StringBuilder(map.entrySet().toString());    
+        System.out.println("The string is: " + str);
     }
 }
